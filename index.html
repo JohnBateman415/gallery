@@ -1,0 +1,91 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>John Bateman's Gallery</title>
+  <meta name="description" content="Test Page">
+  <meta name="John Bateman" content="Gallery">
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+  <style>
+  /*vvvvvvvv CSS GOES BELOW THIS COMMENT vvvvvvvv*/
+  .imageDefault {
+    border: 5px solid royalblue;
+    padding: 2px;
+  }
+
+  .divDefault {
+    border: 10px solid black;
+  }
+  
+  .divSpecial {
+    border: 3px dotted red;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 600px;
+    width: 1200px;
+    background-color: yellow;
+  }
+  
+  /*^^^^^^^^ CSS GOES ABOVE THIS COMMENT ^^^^^^^^*/
+  </style>
+
+</head>
+
+<body>
+  <!-- vvvvvvvv HTML GOES BELOW THIS COMMENT vvvvvvvv -->
+<h1>This is project 2 of the MEDA web developer program</h1>
+<h2>Here is a gallery of random photos</h2>
+<h3>Click on an image and it appears a second time, at the top of the page. Click on the image again and the added image disappears</h3>
+
+  <img src="/images/page1/canoe.jpeg" alt="canoe" id="image01" class="imageDefault">
+  <img src="/images/page1/clown.jpeg" alt="clown" id="image02" class="imageDefault">
+  <img src="/images/page1/cheese.jpeg" alt="cheese" id="image03" class="imageDefault">  
+  <img src="/images/page1/doggy.jpeg" alt="doggy" id="image04" class="imageDefault">
+  <img src="/images/page1/horsie.jpeg" alt="Where is da horsie?" id="image05" class="imageDefault">
+  <img src="/images/page1/mice.jpeg" alt="mice" id="image06" class="imageDefault">
+  <img src="/images/page1/softball.jpeg" alt="softball" id="image07" class="imageDefault">
+  <img src="/images/page1/wine.1.jpg" alt="wine" id="image08" class="imageDefault">
+  
+  <!-- ^^^^^^^^ HTML GOES ABOVE THIS COMMENT ^^^^^^^^ -->
+  
+  <script>
+    /*global $*/
+    /*vvvvvvvv JAVASCRIPT GOES BELOW THIS COMMENT vvvvvvvv*/
+    
+    $(document).ready(function () {
+
+    function deleteImage01() {
+        $("#delete").click(function() {
+        console.log("Remove button clicked");
+        $("#newImage01").remove();
+        $("#delete").remove();
+        $("#newDiv1").remove(); 
+      }); // end of #delete.click
+    }
+
+/*
+      console.log("Attempt to jQuery remove");
+      $("#image02").click(function() {
+        $("#image02").remove();
+        console.log("Executed remove attempt");
+      });
+*/      
+      var myDiv1 = "<div id='newDiv1' class='divSpecial'><img src='/images/page1/canoe.jpeg' alt='No cheese' id='NewImage01' class='imageDefault'></div>";
+    
+      $("#image01").click(function() {
+        console.log("Image01 was clicked");
+        $("body").append(myDiv1);
+      }); // end of #image01.click function
+      
+    });  //end doc ready function
+    
+    
+    /*^^^^^^^^ JAVASCRIPT GOES ABOVE THIS COMMENT ^^^^^^^^*/
+  </script>
+</body>
+</html>
