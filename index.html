@@ -26,8 +26,8 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    height: 600px;
-    width: 1200px;
+    height: 1000px;
+    width: 1000px;
     background-color: yellow;
   }
   
@@ -40,7 +40,10 @@
   <!-- vvvvvvvv HTML GOES BELOW THIS COMMENT vvvvvvvv -->
 <h1>This is project 2 of the MEDA web developer program</h1>
 <h2>Here is a gallery of random photos</h2>
-<h3>Click on an image and it appears a second time, at the top of the page. Click on the image again and the added image disappears</h3>
+<h3>Click on an image and it appears a second time, at the top of the page.<br>
+    Click on the image again and the added image disappears<br>
+    This is pretty raw - there was no requirement to make the grid uniform or the div aestetically pleasing<br>
+    This is viable minimum product - this will be prettier eventually</h3>
 
   <img src="/images/page1/canoe.jpeg" alt="canoe" id="image01" class="imageDefault">
   <img src="/images/page1/clown.jpeg" alt="clown" id="image02" class="imageDefault">
@@ -58,59 +61,99 @@
     /*vvvvvvvv JAVASCRIPT GOES BELOW THIS COMMENT vvvvvvvv*/
     
     $(document).ready(function () {
-/*
-    function deleteImage01() {
-        $("#delete").click(function() {
-        console.log("Remove button clicked");
-        $("#newImage01").remove();
-        $("#delete").remove();
-        $("#newDiv1").remove(); 
-      }); // end of #delete.click
-    }
 
-/*
-      console.log("Attempt to jQuery remove");
-      $("#image02").click(function() {
-        $("#image02").remove();
-        console.log("Executed remove attempt");
-      });
-*/      
-      var myDiv1 = "<div id='newDiv1' class='divSpecial'><img src='/images/page1/canoe.jpeg' alt='No cheese' id='NewImage01' class='imageDefault'></div>";
-      var myDiv2 = "<div id='newDiv2' class='divSpecial'><img src='/images/page1/clown.jpeg' alt='No cheese' id='NewImage01' class='imageDefault'></div>";
+      var myDiv1 = "<div id='newDiv1' class='divSpecial'><img src='/images/page1/canoe.jpeg' alt='No canoe' id='NewImage01' class='imageDefault'></div>";
+      var myDiv2 = "<div id='newDiv2' class='divSpecial'><img src='/images/page1/clown.jpeg' alt='No clown' id='NewImage02' class='imageDefault'></div>";
+      var myDiv3 = "<div id='newDiv3' class='divSpecial'><img src='/images/page1/cheese.jpeg' alt='No cheese' id='NewImage03' class='imageDefault'></div>";
+      var myDiv4 = "<div id='newDiv4' class='divSpecial'><img src='/images/page1/doggy.jpeg' alt='No doggy' id='NewImage04' class='imageDefault'></div>";
+      var myDiv5 = "<div id='newDiv5' class='divSpecial'><img src='/images/page1/horsie.jpeg' alt='No horsie' id='NewImage05' class='imageDefault'></div>";
+      var myDiv6 = "<div id='newDiv6' class='divSpecial'><img src='/images/page1/mice.jpeg' alt='No mice' id='NewImage06' class='imageDefault'></div>";
+      var myDiv7 = "<div id='newDiv7' class='divSpecial'><img src='/images/page1/softball.jpeg' alt='No softball' id='NewImage07' class='imageDefault'></div>";
+      var myDiv8 = "<div id='newDiv8' class='divSpecial'><img src='/images/page1/wine.jpg' alt='No wine' id='NewImage08' class='imageDefault'></div>";
     
       $("#image01").click(function() {
         console.log("Image01 was clicked");
         $("body").append(myDiv1);
-        
+
         $("#newDiv1").click(function() {
         console.log("Image01 deleting with the div container");
-        $("#newImage01").remove();
-        $("#newDiv1").remove(); 
-      }); // end of #image01.functions
+        $("#newDiv1").remove();  
+        });  // end of remove
+      }); // end of image click functions
 
       $("#image02").click(function() {
         console.log("Image02 was clicked");
         $("body").append(myDiv2);
-        
+
         $("#newDiv2").click(function() {
         console.log("Image02 deleting with the div container");
-        $("#newImage02").remove();
-        $("#newDiv1").remove(); 
-      }); // end of #image02 functions
-      
-      
+        $("#newDiv2").remove();  
+        });  // end of remove
+      }); // end of image click functions
 
+      $("#image03").click(function() {
+        console.log("Image03 was clicked");
+        $("body").append(myDiv3);
 
+        $("#newDiv3").click(function() {
+        console.log("Image03 deleting with the div container");
+        $("#newDiv3").remove();  
+        });  // end of remove
+      }); // end of image click functions
 
+      $("#image04").click(function() {
+        console.log("Image04 was clicked");
+        $("body").append(myDiv4);
 
-      
-      
-      }); // end of #image01.click function
-      
-   
-      
+        $("#newDiv4").click(function() {
+        console.log("Image04 deleting with the div container");
+        $("#newDiv4").remove();  
+        });  // end of remove
+      }); // end of image click functions
+
+      $("#image05").click(function() {
+        console.log("Image05 was clicked");
+        $("body").append(myDiv5);
+
+        $("#newDiv5").click(function() {
+        console.log("Image05 deleting with the div container - NOT WORKING");
+        $("#newDiv5").remove();  
+        });  // end of remove
+      }); // end of image click functions
+
+      $("#image06").click(function() {
+        console.log("Image06 was clicked");
+        $("body").append(myDiv6);
+
+        $("#newDiv6").click(function() {
+        console.log("Image06 deleting with the div container");
+        $("#newDiv6").remove();  
+        });  // end of remove
+      }); // end of image click functions
+
+      $("#image07").click(function() {
+        console.log("Image07 was clicked");
+        $("body").append(myDiv7);
+
+        $("#newDiv7").click(function() {
+        console.log("Image07 deleting with the div container");
+        $("#newDiv7").remove();  
+        });  // end of remove
+      }); // end of image click functions
+
+      $("#image08").click(function() {
+        console.log("Image08 was clicked");
+        $("body").append(myDiv8);
+
+        $("#newDiv8").click(function() {
+        console.log("Image08 deleting with the div container");
+        $("#newDiv8").remove();  
+        });  // end of remove
+      }); // end of image click functions
+
     });  //end doc ready function
-    
+
+//      }); // end of #image01.click function
     
     /*^^^^^^^^ JAVASCRIPT GOES ABOVE THIS COMMENT ^^^^^^^^*/
   </script>
